@@ -12,5 +12,10 @@ pipeline {
         sh 'go build'
       }
     }
+    stage ('Test') {
+      steps {
+        sh 'go test ./... -coverprofile=coverage.txt'
+      }
+    }
   }
 }
